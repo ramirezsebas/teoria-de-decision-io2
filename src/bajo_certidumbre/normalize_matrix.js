@@ -28,10 +28,10 @@ function normalizeMatrix(matrix) {
   // Normalizamos la matriz
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
-      normalizedMatrix[i][j] = normalizedMatrix[i][j] / sumColumns[j];
+      normalizedMatrix[i][j] = parseFloat((normalizedMatrix[i][j] / sumColumns[j]).toFixed(2));
     }
   }
-  
+
   return normalizedMatrix;
 }
 
