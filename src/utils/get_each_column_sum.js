@@ -1,9 +1,10 @@
 /**
  * 
- * @param {Array} matrix 
+ * @param {Array} matrix
+ * @param {number} fixedDecimals Número de decimales a los que se quiere redondear. Si no se especifica, se redondeará a 2 decimales. 
  * @returns An array with the sum of each column.
  */
-function getEachColumnSum(matrix) {
+function getEachColumnSum(matrix,fixedDecimals = 2) {
   const rows = matrix.length;
   const columns = matrix[0].length;
 
@@ -13,7 +14,7 @@ function getEachColumnSum(matrix) {
     for (let j = 0; j < rows; j++) {
       sum += matrix[j][i];
     }
-    sumColumns.push(sum);
+    sumColumns.push(parseFloat(sum.toFixed(fixedDecimals)));
   }
   return sumColumns;
 }
